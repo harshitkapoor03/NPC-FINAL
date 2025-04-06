@@ -132,7 +132,7 @@ class SmartTrendVolatilityMaker(ScriptStrategyBase):
     def compute_volatility_state(self, df: pd.DataFrame) -> str:
         natr = df["NATR_14"].iloc[-1]
         bb_width = (df["BBU_20_2.0"].iloc[-1] - df["BBL_20_2.0"].iloc[-1]) / df["close"].iloc[-1]
-        return "high" if (bb_width + natr) > 0.055 else "low"
+        return "high" if (bb_width + natr) > 0.55 else "low"
 
     # def detect_fibonacci_retracement(self, df: pd.DataFrame) -> (bool, tuple):
     #     recent = df.tail(30)
