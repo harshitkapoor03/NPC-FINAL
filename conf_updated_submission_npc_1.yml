@@ -2,6 +2,6 @@ script_file_name: updated_submission_npc.py
 exchange: binance_paper_trade
 trading_pair: SOL-FDUSD
 order_amount: 0.1
-order_refresh_time: 45
+order_refresh_time: 30
 candles_interval: 1m
 candles_max_records: 1000
