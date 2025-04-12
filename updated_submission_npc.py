@@ -331,7 +331,7 @@ class SmartTrendVolatilityMaker(ScriptStrategyBase):
             else:
                 j=1-trendscore
                 bid_spread, ask_spread = (Decimal("0.0045"), Decimal("0.0025")) if broke_lower and volume_spike else (Decimal("0.0045"), Decimal("0.0075"))
-                mean_price = mid_price + (natr_offset * Decimal("0.7")*Decimal(j))
+                mean_price = mid_price - (natr_offset * Decimal("0.7")*Decimal(j))
                 if is_retracing:
                     mean_price = Decimal(str(df["close"].iloc[-1]))
                     sell_size = self.config.order_amount * Decimal("1.2")
